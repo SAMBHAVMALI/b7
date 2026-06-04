@@ -1267,7 +1267,11 @@
         }
 
         /* Global Stage Routing Coordinate Logic */
+        /* Global Stage Routing Coordinate Logic */
         function routeTo(stageId) {
+            // THIS STOPS THE VIDEO FROM PLAYING IN THE BACKGROUND
+            document.querySelectorAll('video').forEach(vid => vid.pause());
+
             document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
             const target = document.getElementById(stageId);
             target.classList.add('active');
